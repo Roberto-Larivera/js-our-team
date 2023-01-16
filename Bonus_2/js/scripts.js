@@ -78,6 +78,7 @@ saveInput.addEventListener('click',
             containerRowCard.innerHTML ="";
             editCard (teamMembers);
             document.getElementById('form-my').reset();
+            document.getElementById("my-btn-close").click();
         }
         console.log('teamMembers',teamMembers);
         
