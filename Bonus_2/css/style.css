@@ -5,13 +5,15 @@
     align-items: center;
 } */
 header{
+    /* position: sticky;
+    top: 0;
+    z-index: 10; */
     height: 150px;
     width: 100%;
 
 }
-main{
-    min-height: 500px;
-}
+
 #my-row-cont .col .card{
     height: 100%;
 }
+

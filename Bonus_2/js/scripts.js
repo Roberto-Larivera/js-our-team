@@ -15,6 +15,8 @@ Barbara Ramos	Graphic Designer	barbara-ramos-graphic-designer.jpg
 // BONUS 3
 
 const containerRowCard = document.getElementById('my-row-cont');
+const saveInput = document.getElementById('save-input');
+
 
 const teamMembers = [
     {
@@ -51,16 +53,60 @@ const teamMembers = [
 
 
 
-for(let i = 0; i < teamMembers.length; i++){
-    console.log(teamMembers[i].name,'- name');
-    console.log(teamMembers[i].role,'- role');
-    console.log(teamMembers[i].image,'- image');
-    //console.log
-    const memberName = teamMembers[i].name;
-    const memberRole = teamMembers[i].role;
-    // const memberImg = ;
-    createCard (memberName,memberRole,teamMembers[i].image)
-};
+editCard (teamMembers);
+
+saveInput.addEventListener('click',
+    function (){
+        const inputName = document.getElementById('name-input').value;
+        const inputRole = document.getElementById('role-input').value;
+        const inputImage = document.getElementById('image-input').value;
+        const inputVerify = document.getElementById('verify').checked;
+        // console.log('inputName',inputName);
+        // console.log('inputRole',inputRole);
+        // console.log('inputImage',inputImage);
+        console.log('inputVerify',inputVerify);
+        if(inputVerify == false || inputName == '' || inputRole == '' || inputImage =='false'){
+            alert('Dati inseriti non validi')
+        }
+        else{
+            
+            teamMembers.push({
+                name : inputName,
+                role : inputRole,
+                image : inputImage
+            });
+            containerRowCard.innerHTML ="";
+            editCard (teamMembers);
+            document.getElementById('form-my').reset();
+        }
+        console.log('teamMembers',teamMembers);
+        
+    }
+)
+console.log('teamMembers',teamMembers);
+
+
+
+
+
+function prevent(e){        //serve per utilizzare il form con un butoon di type submit
+    e.preventDefault();
+  }
+
+
+
+function editCard (teamMembers){
+    for(let i = 0; i < teamMembers.length; i++){
+        // console.log(teamMembers[i].name,'- name');
+        // console.log(teamMembers[i].role,'- role');
+        // console.log(teamMembers[i].image,'- image');
+        //console.log
+        const memberName = teamMembers[i].name;
+        const memberRole = teamMembers[i].role;
+        // const memberImg = ;
+        createCard (memberName,memberRole,teamMembers[i].image)
+    };
+}
 
 
 
@@ -76,10 +122,10 @@ function createCard (mName,mRole,mImg){
     const newCardBody = document.createElement('div');
     newCardBody.setAttribute("class","card-body");
     
-    console.log (newCol)
-    console.log (newCard)
-    console.log (newCardImg)
-    console.log (newCardBody)
+    // console.log (newCol)
+    // console.log (newCard)
+    // console.log (newCardImg)
+    // console.log (newCardBody)
 
     const newCardName = document.createElement('h3');
     const newCardRole = document.createElement('p');
@@ -93,7 +139,6 @@ function createCard (mName,mRole,mImg){
     containerRowCard.append(newCol);
 
 }
-
 
 
 
