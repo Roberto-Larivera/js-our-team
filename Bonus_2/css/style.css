@@ -1,0 +1,17 @@
+/* main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+header{
+    height: 150px;
+    width: 100%;
+
+}
+main{
+    min-height: 500px;
+}
+#my-row-cont .col .card{
+    height: 100%;
+}
