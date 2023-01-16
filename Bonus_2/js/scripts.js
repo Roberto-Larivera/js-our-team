@@ -86,9 +86,6 @@ saveInput.addEventListener('click',
 console.log('teamMembers',teamMembers);
 
 
-
-
-
 function prevent(e){        //serve per utilizzare il form con un butoon di type submit
     e.preventDefault();
   }
