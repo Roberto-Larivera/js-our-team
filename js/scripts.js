@@ -28,7 +28,7 @@ Angela Lopez	Social Media Manager	angela-lopez-social-media-manager.jpg
 Scott Estrada	Developer	scott-estrada-developer.jpg
 Barbara Ramos	Graphic Designer	barbara-ramos-graphic-designer.jpg
 */
-
+const containerListUl = document.getElementById('info-members');
 const teamMembers = [
     {
         name : 'Wayne Barnett',
@@ -61,3 +61,22 @@ const teamMembers = [
         image : 'barbara-ramos-graphic-designer.jpg'
     }
 ];
+for(let i = 0; i < teamMembers.length; i++){
+    for(let key in teamMembers[i]){
+        console.log('-',i+1,'Membro del Team:',teamMembers[i][key]);
+        generationList (containerListUl,i,teamMembers[i][key])
+    }
+};
+
+
+
+
+
+
+
+
+function generationList (containerList,i,value){
+    const newListLi = document.createElement('li');
+    newListLi.innerText = `${i+1} Membro del Team: ${value}`;
+    containerList.append(newListLi);
+}
